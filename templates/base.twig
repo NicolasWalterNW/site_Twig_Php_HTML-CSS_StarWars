@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link href={{CSS}} rel="stylesheet" type="text/css" media="all">
+    <title>{{titleongletpage}}</title>
+    <link rel="icon" href="images/faviconsw.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+
+    <header role="banner">
+        <img id="haut" class="fondetoile" src="images/fondetoile.jpg" alt="" />
+        <div class="banniere">
+            <div class="banniereimg">
+                <a href="index.php"><img class="fondetoileswlogo" src="images/swlogobanniere.png" alt="" /></a>
+            </div>
+        </div>
+    </header>
+
+
+    <nav role="navigation">
+        <ul>
+            <li><a href="index.php">ACCUEIL</a></li>
+            <li><a>FILMS</a>
+                <ul class="sous">
+                    <li><a href="films_rots.php">Revenge of the siths</a></li>
+                    <li><a href="films_esb.php">Empire strikes back</a></li>
+                    <li><a href="films_rogueone.php">Rogue One : A Star Wars Story</a></li>
+                    <li><a href="films_anh.php">A new hope</a></li>
+                    <li><a href="films_rotj.php">Return of the Jedi</a></li>
+                </ul>
+            </li>
+            <li><a>SERIES</a>
+                <ul class="sous">
+                    <li><a href="series_themandalorian.php">The Mandalorian</a></li>
+                    <li><a href="series_bobafett.php">The Book of Boba Fett</a></li>
+                    <li><a href="series_tcw.php">The Clone Wars</a></li>
+                    <li><a href="series_rebels.php">Rebels</a></li>
+                    <li><a href="series_tbb.php">The Bad Batch</a></li>
+                </ul>
+            </li>
+            <li><a>JEUX VIDEOS</a>
+                <ul class="sous">
+                    <li><a href="jeux_swbf.php">Star Wars: Battlefront (2015)</a></li>
+                    <li><a href="jeux_swbf2.php">Star Wars: Battlefront II (2017)</a></li>
+                    <li><a href="jeux_legoswtcs.php">Lego Star Wars: TCS</a></li>
+                    <li><a href="jeux_swjfo.php">Star Wars: Jedi Fallen Order</a></li>
+                    <li><a href="jeux_swsquadrons.php">Star Wars: Squadrons</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.php">CONTACT</a></li>
+        </ul>
+    </nav>
+
+
+    <main role="main">
+
+        <section class="pageflex">
+            <div>
+                <aside>
+                    <div>
+                        <a title="Page officielle Instagram de Star Wars" href="https://www.instagram.com/starwars/"
+                            target="_blank"><img class="imgreseaux" src="images/instagramblc.png" alt="" /></a>
+                    </div>
+
+                    <div>
+                        <a title="Page officielle YouTube de Star Wars" href="https://www.youtube.com/c/StarWars"
+                            target="_blank"><img class="imgreseaux" src="images/youtubeblc.png" alt="" /></a>
+                    </div>
+
+                    <div>
+                        <a title="Page officielle Twitter de Star Wars" href="https://twitter.com/starwars"
+                            target="_blank"><img class="imgreseaux" src="images/twitterblc.png" alt="" /></a>
+                    </div>
+
+                    <div>
+                        <a title="Page officielle Facebook de Star Wars" href="https://www.facebook.com/StarWars.fr/"
+                            target="_blank"><img class="imgreseaux" src="images/facebookblc.png" alt="" /></a>
+                    </div>
+
+                    <div>
+                        <a href="#haut"><img class="imgreseaux" src="images/uparrow.png" alt="" /></a>
+                    </div>
+
+                </aside>
+            </div>
+
+
+            {% block main %}
+
+            {% endblock main %}
+
+
+            <footer role="contentinfo">
+
+                <div class="sitesfooter">
+                    <a href="https://www.starwars.com/">
+                        <img class="iconessitefooter" src="images/logostarwarsfooter.png" alt="" />
+                    </a>
+
+                    <a href="https://starwars.fandom.com/">
+                        <img class="iconessitefooter" src="images/wookiepedia.png" alt="" />
+                    </a>
+                </div>
+
+                <div class="liensfooter">
+                    <ul>
+                        <li><a href="index.php">ACCUEIL</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a>FILMS</a>
+                            <ul>
+                                <li><a href="films_rots.php">Revenge of the siths</a></li>
+                                <li><a href="films_esb.php">Empire strikes back</a></li>
+                                <li><a href="films_rogueone.php">Rogue One : A Star Wars Story</a></li>
+                                <li><a href="films_anh.php">A new hope</a></li>
+                                <li><a href="films_rotj.php">Return of the Jedi</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li><a>SERIES</a>
+                            <ul>
+                                <li><a href="series_themandalorian.php">The Mandalorian</a></li>
+                                <li><a href="series_bobafett.php">The Book of Boba Fett</a></li>
+                                <li><a href="series_tcw.php">The Clone Wars</a></li>
+                                <li><a href="series_rebels.php">Rebels</a></li>
+                                <li><a href="series_tbb.php">The Bad Batch</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li><a>JEUX VIDEOS</a>
+                            <ul>
+                                <li><a href="jeux_swbf.php">Star Wars: Battlefront (2015)</a></li>
+                                <li><a href="jeux_swbf2.php">Star Wars: Battlefront II (2017)</a></li>
+                                <li><a href="jeux_legoswtcs.php">Lego Star Wars: TCS</a></li>
+                                <li><a href="jeux_swjfo.php">Star Wars: Jedi Fallen Order</a></li>
+                                <li><a href="jeux_swsquadrons.php">Star Wars: Squadrons</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="contact.php">CONTACT</a></li>
+                    </ul>
+                </div>
+
+            </footer>
+
+
+</body>
+
+</html>

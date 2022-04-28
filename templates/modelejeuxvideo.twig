@@ -1,0 +1,101 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div>
+
+
+    <div class="chgmttlangue">
+        <div>
+            <a title="Version française" href={{jeux.versionfr}}><img class="imglangues" src="images/france.png" alt="" /></a>
+        </div>
+        <div>
+            <a title="English version" href={{jeux.versionen}}><img class="imglangues" src="images/uk.png" alt="" /></a>
+        </div>
+    </div>
+
+
+
+    <h1>Les jeux vidéos</h1>
+
+    <h2>{{jeux.titreh2jeux}}</h2>
+
+    <div class="imagetop">
+
+        <img class="imgimagetop" src={{jeux.imagetop}} alt="" />
+
+        <div class="infossurimagetop">
+            <p>Ma note : {{jeux.notesur20}}</p>
+            <p>DATE DE PARUTION : {{jeux.dateparution}}</p>
+            <p>DÉVELOPPEMENT : {{jeux.developpement}}</p>
+            <p>ÉDITION : {{jeux.edition}}</p>
+        </div>
+
+    </div>
+
+
+
+    <article>
+        <h3>Trame</h3>
+
+        <p>{{jeux.paratrame}}</p>
+    </article>
+
+
+    <article>
+        <h3>Système de jeu</h3>
+
+        <p>{{jeux.parasystemedejeu1}}</p>
+        <p>{{jeux.parasystemedejeu2}}</p>
+    </article>
+
+    <article>
+        <h3>Extrait de gameplay</h3>
+
+        <iframe class="videotrailer" width="100%" height="500px" src={{jeux.videogameplay}} title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </article>
+
+
+    <article>
+        <h3>Configuration requise</h3>
+
+        <div class="config">
+
+            <div class="configdivpremier">
+                <p>MINIMALE :</p>
+                <p class="firstparaconfig">Système d'exploitation et processeur 64 bits nécessaires</p>
+                <p><b>Système d'exploitation : </b>{{jeux.minisysteme}}</p>
+                <p><b>Processeur : </b>{{jeux.miniprocesseur}}</p>
+                <p><b>Mémoire vive : </b>{{jeux.minimemoirevive}}</p>
+                <p><b>Graphiques : </b>{{jeux.minigraphiques}}</p>
+                <p><b>DirectX : </b>{{jeux.minidirectx}}</p>
+                <p><b>Réseau : </b>{{jeux.minireseau}}</p>
+                <p><b>Espace disque : </b>{{jeux.miniespacedisque}}</p>
+            </div>
+
+            <div>
+                <p>RECOMMANDEE :</p>
+                <p class="firstparaconfig">Système d'exploitation et processeur 64 bits nécessaires</p>
+                <p><b>Système d'exploitation : </b>{{jeux.recosysteme}}</p>
+                <p><b>Processeur : </b>{{jeux.recoprocesseur}}</p>
+                <p><b>Mémoire vive : </b>{{jeux.recomemoirevive}}</p>
+                <p><b>Graphiques : </b>{{jeux.recographiques}}</p>
+                <p><b>DirectX : </b>{{jeux.recodirectx}}</p>
+                <p><b>Réseau : </b>{{jeux.recoreseau}}</p>
+                <p><b>Espace disque : </b>{{jeux.recoespacedisque}}</p>
+            </div>
+
+        </div>
+    </article>
+
+
+</div>
+</section>
+</main>
+
+
+
+{% endblock main %}

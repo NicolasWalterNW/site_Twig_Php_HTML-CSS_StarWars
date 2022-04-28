@@ -1,0 +1,214 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+
+<div>
+
+    
+    <div class="chgmttlangue">
+        <div>
+            <a title="Version française" href={{series.versionfr}}><img class="imglangues" src="images/france.png" alt="" /></a>
+        </div>
+        <div>
+            <a title="English version" href={{series.versionen}}><img class="imglangues" src="images/uk.png" alt="" /></a>
+        </div>
+    </div>
+
+
+    <h1>Les séries</h1>
+
+    <h2>{{series.titreh2series}}</h2>
+
+    <!-- Contenu à gauche de la fiche technique -->
+
+    <article class="tabinfos">
+        <div class="gauchetabinfos">
+
+            <table class="tabficheinfos">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <p>{{series.titreh2series}}</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="tabficheinfosimg">
+                            <img class="imgaffiches" src={{series.imgficheinfo}} alt={{series.altimgficheinfo}} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Type de série</b></td>
+                        <td>{{series.typedeserie}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Genre</b></td>
+                        <td>{{series.genre}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Création</b></td>
+                        <td>{{series.creation}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Directeurs</b></td>
+                        <td>
+                            <ul>
+                                {% for element in tableaudirecteurs %}
+                                <li>{{ element }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Musique</b></td>
+                        <td>{{series.musique}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>Timeline</b></td>
+                        <td>{{series.timeline}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+        <!-- Fin du contenu à gauche de la fiche technique -->
+
+        <!-- Fiche technique -->
+
+        <div>
+
+            <iframe class="videotrailer" width="100%" height="400px" src={{series.videoyt}}
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <div class="sommaire">
+                <p>Sommaire</p>
+                <ol>
+                    <li><a href="#synopsis">Synopsis</a>
+                    <li><a href="#perso">Personnages</a></li>
+                    <li><a href="#prod">Production</a>
+                        <ul>
+                            <li><a href="#devpmt">Développement</a></li>
+                            <li><a href="#tournage">Tournage</a></li>
+                            <li><a href="#fichetech">Fiche technique</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#accueil">Accueil</a>
+                        <ul>
+                            <li><a href="#critique">Critique</a></li>
+                            <li><a href="#audiences">Audiences</a></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- Fin de la fiche technique -->
+
+    <article class="synopsispersodiv">
+        <div class="synopsispersodivpremier">
+            <h3 id="synopsis">Synopsis</h3>
+
+            <p>{{series.parasynopsis1}}</p>
+
+            <p>{{series.parasynopsis1}}</p>
+
+            <p>{{series.parasynopsis1}}</p>
+        </div>
+
+
+        <div>
+            <h3 id="perso">Personnages</h3>
+
+            <ul>
+                {% for element in tableauperso %}
+                <li>{{ element }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </article>
+
+
+<article>
+    <h3 id="prod">Production</h3>
+    <h4 id="devpmt">Développement</h4>
+
+    {% for element in tableaudevlpt %}
+    <p>{{ element }}</p>
+    {% endfor %}
+
+
+    <h4 id="tournage">Tournage</h4>
+
+    <p>{{series.paratournage}}</p>
+
+    <h4 id="fichetech">Fiche technique</h4>
+
+    <ul>
+        <li>{{series.titreoriginal}}</li>
+        <li>{{series.titrefrancais}}</li>
+        <li>{{series.directionartistique}}</li>
+        <li>{{series.costumes}}</li>
+        <li>{{series.maquillage}}</li>
+        <li>{{series.effetsspeciaux}}</li>
+        <li>{{series.societeprod}}</li>
+        <li>{{series.societedistri}}</li>
+        <li>{{series.budget}}</li>
+        <li>{{series.langueoriginale}}</li>
+        <p>Dates de sortie</p>
+        <li>Date de sortie US : {{series.datesortieus}}</li>
+        <li>Date de sortie FR : {{series.datesortiefr}}</li>
+    </ul>
+</article>
+
+
+<article>
+    <h3 id="accueil">Accueil</h3>
+    <h4 id="critique">Critique</h4>
+
+    {% for element in tableaucritique %}
+    <p>{{ element }}</p>
+    {% endfor %}
+
+
+<table class="tableaucritiquesboucle">
+    <thead>
+        <tr>
+            <th colspan="2">CRITIQUES SPECTATEUR</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for element in tableaucritiquesboucle %}
+        <tr>
+            <td class="etoiles">{{element.etoiles}}</td>
+            <td class="nbcritiques">{{element.nbcritiques}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+
+    <h4 id="audiences">Audiences</h4>
+
+    <p>{{series.paraaudiences1}}</p>
+
+    <p>{{series.paraaudiences2}}</p>
+</article>
+
+
+</div>
+</section>
+</main>
+
+
+{% endblock main %}

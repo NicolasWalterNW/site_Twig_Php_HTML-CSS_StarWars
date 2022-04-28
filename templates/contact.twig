@@ -1,0 +1,80 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div>
+
+    <article>
+
+        <h1>Contact</h1>
+
+        <form action="reception.php" method=POST>
+
+            <fieldset>
+                <!--
+                <legend> Vous êtes</legend>
+                <input name="utilisateur" id="occasionnel" type="radio" value="occasionnel"> <label for="occasionnel">
+                    un lecteur occasionnel </label>
+                <input name="utilisateur" id="tintinophile" type="radio" value="tintinophile"> <label
+                    for="tintinophile"> Un veritable tintinophile </label>
+                <p><i>(Choix exlusif)</i> </p>
+
+                <legend> Vous collectionnez</legend>
+                <input name="affiches" id="affiches" type="checkbox" value="affiches"> <label for="affiches">les
+                    affiches </label>
+                <input name="objets" id="objets" type="checkbox" value="objets"> <label for="objets">Les objets </label>
+                <input name="albums" id="albums" type="checkbox" value="albums"> <label for="albums">Les vieux albums
+                </label>
+                <p><i>(Choix inclusifs)</i> </p>
+
+                <legend>Formulaire de contact</legend>
+                <p class="align">
+                    <label for="Age"> Votre age : </label>
+                    <input name="Age" id="Age" type="number" value="25" min="5" max="100"> </p>
+                <p class="align"><label for="statut"> Votre Statut : </label>
+                    <select name="statut" id="statut" size="1">
+                        <option selected value="etudiant"> Etudiant </option>
+                        <option value="actif"> Actif</option>
+                        <option value="retraite"> Retraité </option>
+                        <option value="autre"> Autre... </option>
+                    </select>
+                </p>
+                -->
+
+
+                <legend>Formulaire de contact</legend>
+
+                <p>Votre nom</p>
+                <p class="align">
+                    <input name="nom" id="nom" type="text" placeholder="Nom" size="60">
+                </p>
+
+                <p>Votre e-mail</p>
+                <p class="align">
+                    <input name="mail" id="mail" type="email" placeholder="votre@email.com" size="60">
+                </p>
+
+                <p>Sujet du message</p>
+                <p class="align">
+                    <input name="sujet" id="sujet" type="text" placeholder="Sujet" size="60">
+                </p>
+
+                <p>Votre message</p>
+                <p>
+                    <textarea name="message" cols="62" rows="10" placeholder="Message"></textarea>
+                </p>
+
+                <input name="soumettre" type="submit" value="Envoyer">
+
+            </fieldset>
+        </form>
+
+    </article>
+
+</div>
+
+</section>
+
+</main>
+
+{% endblock main %}

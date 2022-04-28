@@ -1,0 +1,306 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div>
+
+
+    <div class="chgmttlangue">
+        <div>
+            <a title="Version française" href={{films.versionfr}}><img class="imglangues" src="images/france.png" alt="" /></a>
+        </div>
+        <div>
+            <a title="English version" href={{films.versionen}}><img class="imglangues" src="images/uk.png" alt="" /></a>
+        </div>
+    </div>
+
+
+
+    <h1>Les films</h1>
+
+    <h2>{{films.titreh2films}}</h2>
+
+    <!-- Contenu à gauche de la fiche technique -->
+
+    <article class="tabinfos">
+        <div class="gauchetabinfos">
+
+            {% for element in paraintro %}
+            <p>{{ element }}</p>
+            {% endfor %}
+
+            <div class="sommaire">
+                <p>Sommaire</p>
+                <ol>
+                    <li><a href="#synopsis">Synopsis</a>
+                        <ul>
+                            <li><a href="#presgen">Présentation générale</a></li>
+                            <li><a href="#synodetail">Synopsis détaillé</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#perso">Personnages</a></li>
+                    <li><a href="#fichetech">Fiche technique</a></li>
+                    <li><a href="#distri">Distribution</a></li>
+                    <li><a href="#prod">Production</a>
+                        <ul>
+                            <li><a href="#scenario">Scénario</a></li>
+                            <li><a href="#tournage">Tournage</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#accueil">Accueil</a>
+                        <ul>
+                            <li><a href="#sortie">Sortie</a></li>
+                            <li><a href="#critique">Critique</a></li>
+                            <li><a href="#boxoffice">Box-office</a></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+        <!-- Fin du contenu à gauche de la fiche technique -->
+
+        <!-- Fiche technique -->
+
+        <div>
+            <table class="tabficheinfos">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <p>{{films.titreh2films}}</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="tabficheinfosimg">
+                            <img class="imgaffiches" src={{films.imgficheinfo}} alt={{films.altimgficheinfo}} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Directeur</b></td>
+                        <td>{{films.directeur}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Producteur</b></td>
+                        <td>{{films.producteur}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Acteurs principaux</b></td>
+                        <td>
+
+                            {% for element in tableauacteurprinci %}
+                            {{ element }}<br>
+                            {% endfor %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Musique</b></td>
+                        <td>{{films.musique}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Sortie</b></td>
+                        <td>{{films.datesortie}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Durée</b></td>
+                        <td>{{films.duree}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>Budget</b></td>
+                        <td>{{films.budget}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </article>
+
+    <!-- Fin de la fiche technique -->
+
+
+    <article>
+        <h3 id="synopsis">Synopsis</h3>
+
+        <h4 id="presgen">Présentation générale</h4>
+
+        {% for element in parapresgen %}
+        <p>{{ element }}</p>
+        {% endfor %}
+    </article>
+
+    <article>
+        <h4 id="synodetail">Synopsis détaillé</h4>
+
+        <p>{{films.parasynodetail1}}</p>
+
+        <p>{{films.parasynodetail2}}</p>
+    </article>
+
+
+    <article>
+        <h3 id="perso">Personnages</h3>
+
+        <div class="persogauche">
+            <img class="imgperso" src={{films.imgpersogauche}} alt={{films.altimgpersogauche}} />
+            <p>{{films.altimgpersogauche}}</p>
+        </div>
+
+        <p><strong>{{films.nompersostrong1}}</strong>{{films.paraperso1}}</p>
+
+        <p><strong>{{films.nompersostrong2}}</strong>{{films.paraperso2}}</p>
+
+        <p><strong>{{films.nompersostrong3}}</strong>{{films.paraperso3}}</p>
+
+        <p><strong>{{films.nompersostrong4}}</strong>{{films.paraperso4}}</p>
+    </article>
+
+
+    <article>
+        <h3 id="fichetech">Fiche Technique</h3>
+
+        <ul>
+            <li>{{films.titreoriginal}}</li>
+            <li>{{films.titrefrancais}}</li>
+            <li>{{films.directionartistique}}</li>
+            <li>{{films.costumes}}</li>
+            <li>{{films.maquillage}}</li>
+            <li>{{films.effetsspeciaux}}</li>
+            <li>{{films.societeprod}}</li>
+            <li>{{films.societedistri}}</li>
+            <li>{{films.budget}}</li>
+            <li>{{films.langueoriginale}}</li>
+            <p>Dates de sortie :</p>
+            <li>Date de sortie US : {{films.datesortieus}}</li>
+            <li>Date de sortie FR : {{films.datesortiefr}}</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3 id="distri">Distribution</h3>
+
+        <ul>
+
+            {% for element in tableaudistri %}
+            <li>{{ element }}</li>
+            {% endfor %}
+
+        </ul>
+
+        <p><strong>Photo des acteurs principaux</strong></p>
+        <div class="tabacteurs">
+
+            <figure>
+                <img class="acteurs" src={{films.imgacteurs1}} alt={{films.altimgacteurs1}} />
+                <figcaption>{{films.altimgacteurs1}}</figcaption>
+            </figure>
+            <figure>
+                <img class="acteurs" src={{films.imgacteurs2}} alt={{films.altimgacteurs2}} />
+                <figcaption>{{films.altimgacteurs2}}</figcaption>
+            </figure>
+            <figure>
+                <img class="acteurs" src={{films.imgacteurs3}} alt={{films.altimgacteurs3}} />
+                <figcaption>{{films.altimgacteurs3}}</figcaption>
+            </figure>
+            <figure>
+                <img class="acteurs" src={{films.imgacteurs4}} alt={{films.altimgacteurs4}} />
+                <figcaption>{{films.altimgacteurs4}}</figcaption>
+            </figure>
+            <figure>
+                <img class="acteurs" src={{films.imgacteurs5}} alt={{films.altimgacteurs5}} />
+                <figcaption>{{films.altimgacteurs5}}</figcaption>
+            </figure>
+    </article>
+
+
+    <article>
+        <h3 id="prodcution">Production</h3>
+        <h4 id="scenario">Scénario</h4>
+
+        <div class="lucasdroite">
+            <img class="glucas" src={{films.imgprodscenar}} alt={{films.altimgprodscenar}} />
+            <p>{{films.altimgprodscenar}}</p>
+        </div>
+
+        <p>{{films.parascenar1}}</p>
+
+        <p>{{films.parascenar2}}</p>
+
+
+        <h4 id="tournage">Tournage</h4>
+
+        <p>{{films.paratournage1}}</p>
+
+        <p>{{films.paratournage2}}</p>
+    </article>
+
+
+    <article>
+        <h3 id="accueil">Accueil</h3>
+        <h4 id="sortie">Sortie</h4>
+
+        <p>{{films.parasortie1}}</p>
+
+        <p>{{films.parasortie2}}</p>
+
+        <p>{{films.parasortie3}}</p>
+
+
+        <h4 id="critique">Critique</h4>
+
+        <p>{{films.paracritique1}}</p>
+
+        <p>{{films.paracritique2}}</p>
+
+
+        <h4 id="boxoffice">Box-office</h4>
+
+        <table class="tabboxoff">
+
+            <thead>
+                <tr>
+                    <th colspan="3"><strong>Résultats au box-office par région/pays</strong></th>
+                </tr>
+            </thead>
+            <tr>
+                <th>Pays</th>
+                <th>Box-office (2005)</th>
+                <th>Classement de l'année (2005)</th>
+            </tr>
+            <tr>
+                <td>Monde</td>
+                <td>{{films.mondedollars}}</td>
+                <td>{{films.mondeposition}}</td>
+            </tr>
+            <tr>
+                <td>Etats-Unis</td>
+                <td>{{films.etatsunisdollars}}</td>
+                <td>{{films.etatsunisposition}}</td>
+            </tr>
+            <tr>
+                <td>France</td>
+                <td>{{films.franceentrees}}</td>
+                <td>{{films.franceposition}}</td>
+
+        </table>
+
+
+        <p>{{films.paraboxoff1}}</p>
+
+        <p>{{films.paraboxoff2}}</p>
+
+    </article>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+{% endblock main %}
